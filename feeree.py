@@ -41,7 +41,8 @@ def main():
         feeds.append(getfeed(url))
 
     for feed in feeds:
-        print(feed)
+        for feeditem in feed:
+            print(feeditem)
 
 if __name__ == '__main__':
     main()
