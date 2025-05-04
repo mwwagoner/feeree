@@ -14,21 +14,13 @@ def getfeed(feedurl):
     print("")
     
     for entry in d['entries']:
-        #print(str(entrycount) + ") " + entry['title'])
         items.append(str(entrycount) + ") " + entry['title'])
-        #print(entry['published'])
         items.append(entry['published'])
-        #print(entry['link'])
         items.append(entry['link'])
-        #print(entry['summary'])
         items.append(entry['summary'])
-        #print("---")
         entrycount += 1
 
-    #print(items)
     return items
-    
-    #print(d['entries'][0].keys())
 
 def main():
     urls = ['https://thefp.com/feed', 
@@ -37,7 +29,6 @@ def main():
     feeds = []
 
     for url in urls:
-        #feeds += getfeed(url)
         feeds.append(getfeed(url))
 
     for feed in feeds:
