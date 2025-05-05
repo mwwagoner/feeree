@@ -25,7 +25,8 @@ def getfeed(feedurl):
 def main():
     urls = ['https://thefp.com/feed', 
             'https://www.wired.com/feed/rss', 
-            'https://standardebooks.org/feeds/rss/new-releases'] 
+            'https://standardebooks.org/feeds/rss/new-releases',
+            'https://www.space.com/feeds/all'] 
     feeds = []
 
     for url in urls:
