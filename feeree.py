@@ -1,4 +1,4 @@
-import feedparser
+import feedparser, html
 # TODO: Add a way to save individual entries from a feed to revisit later
 # TODO: Check for a valid url before trying to get a feed
 
@@ -14,10 +14,13 @@ def getfeed(feedurl):
     items.append("")
     
     for entry in d['entries']:
+        # The summary field for some feeds seem to include HTML character entities so they need to be converted
+        summarytext = html.unescape(entry['summary'])
+
         items.append(str(entrycount) + ") " + entry['title'])
         items.append(entry['published'])
         items.append(entry['link'])
-        items.append(entry['summary'])
+        items.append(summarytext)
         entrycount += 1
 
     return items
@@ -32,7 +35,7 @@ def main():
     for url in urls:
         feeds.append(getfeed(url))
 
-    with open('feeds.txt', 'w', encoding = "utf-8") as outputfile:
+    with open('feeds.txt', 'w', encoding="utf-8") as outputfile:
         for feed in feeds:
             for feeditem in feed:
                 outputfile.write(f"{feeditem}\n")
