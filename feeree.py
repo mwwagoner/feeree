@@ -20,7 +20,7 @@ def getfeed(feedurl):
         items.append(str(entrycount) + ") " + entry['title'])
         items.append(entry['published'])
         items.append(entry['link'])
-        items.append(summarytext)
+        items.append(f"{summarytext}\n")
         entrycount += 1
 
     return items
