@@ -8,10 +8,10 @@ def getfeed(feedurl):
     entrycount = 0
     items = []
     
-    items.append(('--------------------')
-    items.append((d['feed']['title'])
-    items.append((d['feed']['date'])
-    items.append(("")
+    items.append('--------------------')
+    items.append(d['feed']['title'])
+    items.append(d['feed']['date'])
+    items.append("")
     
     for entry in d['entries']:
         items.append(str(entrycount) + ") " + entry['title'])
