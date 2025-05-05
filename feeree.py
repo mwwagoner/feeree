@@ -28,13 +28,16 @@ def main():
             'https://standardebooks.org/feeds/rss/new-releases',
             'https://www.space.com/feeds/all'] 
     feeds = []
+    outputfile = open('feeds.txt', 'w')
 
     for url in urls:
         feeds.append(getfeed(url))
 
     for feed in feeds:
         for feeditem in feed:
-            print(feeditem)
+            outputfile.write(feeditem + "\n")
+
+    outputfile.close()
 
 if __name__ == '__main__':
     main()
