@@ -29,7 +29,8 @@ def main():
     urls = ['https://thefp.com/feed', 
             'https://www.wired.com/feed/rss', 
             'https://standardebooks.org/feeds/rss/new-releases',
-            'https://www.space.com/feeds/all'] 
+            'https://www.space.com/feeds/all',
+            'https://www.thenewatlantis.com/feed'] 
     feeds = []
 
     for url in urls:
